@@ -1,7 +1,6 @@
-package board.webservice;
+package com.mi.board.webservice;
 
 
-import com.mi.board.webservice.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,7 @@ public class HelloControllerTest {
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
+
     }
 
 }
