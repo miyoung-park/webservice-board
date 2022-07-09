@@ -4,7 +4,6 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     // springBoot 플러그인의 2.1.7.RELEASE 의존성 주입
     dependencies {
@@ -28,8 +27,14 @@ repositories {
 
 // 프로젝트 개발에 필요한 의존성들을 선언
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-web') // spring boot
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    compileOnly('org.springframework.boot:spring-boot-starter-data-jpa')  // 스프링 부트 버전에 따른 JPA 관련 라이브러리 버전 관리
+    compileOnly('org.h2database:h2')    // 인 메모리형 관계형 데이터 베이스
+    testCompileOnly('org.springframework.boot:spring-boot-starter-test')
+
 }
 
 
