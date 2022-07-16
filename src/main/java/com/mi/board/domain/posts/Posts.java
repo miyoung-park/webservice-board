@@ -26,7 +26,7 @@ public class Posts { // Entity 클래스
 
     @Id // PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK 생성규칙... IDENTITY : 붙여야 AutoIncrement 가 됨
-    private Long id; // Long : mySQL bigint 형태로 생각.
+    private Long seq; // Long : mySQL bigint 형태로 생각.
 
     // @Column 굳이 선언하지 않아도 되긴 하지만 사용하고 싶은 옵션이 있는 경우에 명시함
     @Column(length = 500, nullable = false)
@@ -34,6 +34,7 @@ public class Posts { // Entity 클래스
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
+
 
     private String author;
 

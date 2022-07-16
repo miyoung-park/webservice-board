@@ -32,7 +32,7 @@ dependencies {
     compileOnly('org.projectlombok:lombok')
     annotationProcessor('org.projectlombok:lombok')
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')  // 스프링 부트 버전에 따른 JPA 관련 라이브러리 버전 관리
-    testImplementation('org.h2database:h2')    // 인 메모리형 관계형 데이터 베이스
+    testImplementation('com.h2database:h2:2.0.202') // 인 메모리형 관계형 데이터 베이스
     testCompileOnly('org.springframework.boot:spring-boot-starter-test')
 
 }

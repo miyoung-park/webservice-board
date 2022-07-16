@@ -28,15 +28,16 @@ public class PostsRepositoryTest {
         String title = "테스트 게시글";
         String content = "테스트 본문";
 
+        // save : Posts 에 Insert/Update 쿼리 실행
+        // PK_ID 값이 없다면 Insert , 있다면 Update
         postsRepository.save(Posts.builder()
-                .title(title)
-                .content(content)
-                .author("qkraldud1529@gmail.com")
-                .build());
+                        .title(title)
+                        .content(content)
+                        .author("qkraldud1529@gmail.com")
+                        .build());
 
-
+        // Posts 테이블에 있는 모든 데이터 조회
         List<Posts> listPosts = postsRepository.findAll();
-
         Posts posts = listPosts.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
