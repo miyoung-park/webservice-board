@@ -1,5 +1,7 @@
 package com.mi.board.domain.posts;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

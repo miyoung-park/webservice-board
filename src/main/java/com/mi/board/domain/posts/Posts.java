@@ -3,6 +3,7 @@ package com.mi.board.domain.posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -18,8 +19,14 @@ import javax.persistence.*;
  *  Q. Setter 가 없는데 어떻게 Insert 를 할 수 있는지 ?
  *  A. 생성자를 통해 최종값을 채운 뒤 DB에 삽입하는 형태
  *  해당 Entity 클래스에서는 빌더 패턴 사용
+ *
+ *  *** Entity 클래스와 Dto 클래스가 유사한 형태임에도 Entity 를 Request, Response 로 사용하지 않는 이유는
+ *  Entity 클래스는 데이터베이스와 맟닿은 핵심 클래스이고 많은 서비스 클래스나 비즈니스 로직들이 Entity 를 기준으로
+ *  동작하기 때문에 Entity 를 자주 변경하는 것을 피해야한다.
+ *  View Layer 와 DataBase Layer 의 역할분리를 꼭 해야한다 !!
  */
 @Getter
+@ToString
 @NoArgsConstructor
 @Entity // JPA 의 어노테이션
 public class Posts { // Entity 클래스

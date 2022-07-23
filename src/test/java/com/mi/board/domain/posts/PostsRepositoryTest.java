@@ -41,6 +41,7 @@ public class PostsRepositoryTest {
         Posts posts = listPosts.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+        System.out.println( "posts :::: " + posts );
     }
 
 }
